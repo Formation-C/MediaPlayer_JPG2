@@ -1,5 +1,6 @@
 #include <iostream>
 #include <algorithm>
+#include <string>
 #include "Player.h"
 
 
@@ -21,7 +22,30 @@ int main()
     {
         cout << "Input command: ";
         cin >> input;
-        cout << input << endl;
+
+        try
+        {
+            if(input == "play")
+            {
+                player->Getstate()->onPlay();
+            }
+            else if(input == "stop")
+            {
+                player->Getstate()->onStop();
+            }
+            else
+            {
+                throw "Unknown command";
+                //cout << "Unknown command" << endl;
+            }
+        }
+
+        catch (char const* errorMessage)
+        {
+            cout << "Error: " << errorMessage << endl;
+        }
+
+
     }
     return 0;
 }

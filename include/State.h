@@ -14,6 +14,9 @@ class State
 
         virtual void onPlay() = 0;
         virtual void onStop() = 0;
+        //virtual void onPause() = 0;
+        //virtual void onPrevious() = 0;
+        //virtual void onNext() = 0;
 
     protected:
         Player *player;

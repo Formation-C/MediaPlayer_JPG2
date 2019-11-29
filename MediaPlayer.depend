@@ -1,7 +1,8 @@
 # depslib dependency file v1.0
-1575019399 source:d:\formation c++\mediaplayer\main.cpp
+1575027788 source:d:\formation c++\mediaplayer\main.cpp
 	<iostream>
 	<algorithm>
+	<string>
 	"Player.h"
 
 1575024058 source:d:\formation c++\mediaplayer\src\player.cpp
@@ -14,12 +15,35 @@
 	"State.h"
 	"StoppedState.h"
 
-1575020523 source:d:\formation c++\mediaplayer\src\state.cpp
+1575026382 source:d:\formation c++\mediaplayer\src\state.cpp
+	<iostream>
 	"State.h"
 
-1575023786 d:\formation c++\mediaplayer\include\state.h
+1575024923 d:\formation c++\mediaplayer\include\state.h
 	"Player.h"
 
 1575024311 d:\formation c++\mediaplayer\include\stoppedstate.h
+	<State.h>
+
+1575027685 source:d:\formation c++\mediaplayer\src\stoppedstate.cpp
+	<iostream>
+	"StoppedState.h"
+	"PlayingState.h"
+	"State.h"
+
+1575026937 source:d:\formation c++\mediaplayer\src\playingstate.cpp
+	<iostream>
+	"PlayingState.h"
+	"State.h"
+
+1575026991 d:\formation c++\mediaplayer\include\playingstate.h
+	<State.h>
+
+1575026960 source:d:\formation c++\mediaplayer\src\pausestate.cpp
+	<iostream>
+	"PauseState.h"
+	"State.h"
+
+1575026989 d:\formation c++\mediaplayer\include\pausestate.h
 	<State.h>
 
