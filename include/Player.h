@@ -4,6 +4,8 @@
 #include <string>
 #include <vector>
 
+class State;
+
 class Player
 {
     public:
@@ -16,8 +18,14 @@ class Player
         void Settracklist(std::vector<std::string> *val) { trackList = val; }
         int GetcurrentTrack() { return currentTrack; }
         void SetcurrentTrack(int val) { currentTrack = val; }
-        //State Getstate() { return state; }
-        //void Setstate(State val) { state = val; }
+        State *Getstate() { return state; }
+        void Setstate(State *val) { state = val; }
+
+        std::string startPlayback();
+        std::string pausePlayback();
+        std::string stopPlayback();
+        std::string previousTrack();
+        std::string nextTrack();
 
     protected:
 
@@ -25,7 +33,10 @@ class Player
         bool playing;
         int currentTrack;
         std::vector<std::string> *trackList;
-        //State state;
+        State *state;
 };
+
+#include "State.h"
+#include "StoppedState.h"
 
 #endif // PLAYER_H

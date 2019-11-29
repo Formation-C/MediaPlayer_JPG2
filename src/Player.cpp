@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "StoppedState.h"
 
 Player::Player()
 {
@@ -22,9 +23,41 @@ Player::Player()
     {
         trackList->push_back("Track " + std::to_string(ii+1) + " - ");
     }
+
+    Setstate(new StoppedState(this));
 }
 
 Player::~Player()
 {
     delete trackList;
+}
+
+std::string Player::startPlayback()
+{
+    return "Playing " + trackList->at(currentTrack);
+}
+
+std::string Player::pausePlayback()
+{
+    return "Paused : " + trackList->at(currentTrack);
+}
+
+std::string Player::stopPlayback()
+{
+    currentTrack = 0;
+    return "Stopped";
+}
+
+std::string Player::previousTrack()
+{
+    currentTrack--;
+    currentTrack %= trackList->size();
+    return "Playing " + trackList->at(currentTrack);
+}
+
+std::string Player::nextTrack()
+{
+    currentTrack++;
+    currentTrack %= trackList->size();
+    return "Playing " + trackList->at(currentTrack);
 }
